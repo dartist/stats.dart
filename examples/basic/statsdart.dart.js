@@ -5805,8 +5805,7 @@ $$.Stats = {"":
 $$.main_draw = {"":
  ["context_1", "stats_0"],
  super: "Closure",
- $call$1: function(t) {
-  var time = $.mul($.DateImplementation$now().millisecondsSinceEpoch, 0.001);
+ $call$1: function(time) {
   if (typeof time !== 'number') return this.$call$1$bailout(1, time);
   this.context_1.clearRect$4(0, 0, 512, 512);
   this.stats_0.begin$0();
