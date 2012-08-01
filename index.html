@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Stats.dart by financeCoding</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Stats.dart</h1>
+        <h2>Simple stat counter in dart</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/financeCoding/stats.dart/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/financeCoding/stats.dart/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/financeCoding/stats.dart" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>stats.dart</h1>
+
+<h4>Dart Performance Monitor</h4>
+
+<p>This class provides a simple info box that will help you monitor your code performance.</p>
+
+<ul>
+<li>
+<strong>FPS</strong> Frames rendered in the last second. The higher the number the better.</li>
+<li>
+<strong>MS</strong> Milliseconds needed to render a frame. The lower the number the better.</li>
+</ul><h3>Screenshots</h3>
+
+<p><img src="http://financeCoding.github.com/stats.dart/assets/stats_dart_fps.png" alt="stats_js_fps.png"><img src="http://financeCoding.github.com/stats.dart/assets/stats_dart_ms.png" alt="stats_js_ms.png"></p>
+
+<h3>Live Example</h3>
+
+<p><a href="http://financeCoding.github.com/stats.dart/examples/basic/statsdart.html">example</a></p>
+
+<h3>Usage</h3>
+
+<div class="highlight"><pre>#<span class="k">import</span><span class="p">(</span><span class="s1">'dart:html'</span><span class="p">);</span>
+#<span class="k">import</span><span class="p">(</span><span class="s1">'../../src/stats.dart'</span><span class="p">);</span>
+<span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Stats</span> <span class="n">stats</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stats</span><span class="p">();</span>
+  <span class="n">document</span><span class="p">.</span><span class="n">body</span><span class="p">.</span><span class="n">elements</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">stats</span><span class="p">.</span><span class="n">container</span><span class="p">);</span>
+  <span class="n">CanvasElement</span> <span class="n">canvas</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CanvasElement</span><span class="p">();</span>
+  <span class="n">canvas</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="m">512</span><span class="p">;</span>
+  <span class="n">canvas</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="m">512</span><span class="p">;</span>
+  <span class="n">document</span><span class="p">.</span><span class="n">body</span><span class="p">.</span><span class="n">elements</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">canvas</span><span class="p">);</span>
+  <span class="n">CanvasRenderingContext2D</span> <span class="n">context</span> <span class="o">=</span> <span class="n">canvas</span><span class="p">.</span><span class="n">getContext</span><span class="p">(</span><span class="s1">'2d'</span><span class="p">);</span>
+  <span class="n">context</span><span class="p">.</span><span class="n">fillStyle</span> <span class="o">=</span> <span class="s1">'rgba(127,0,255,0.05)'</span><span class="p">;</span>
+
+  <span class="n">draw</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">context</span><span class="p">.</span><span class="n">clearRect</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">512</span><span class="p">,</span> <span class="m">512</span><span class="p">);</span>
+
+    <span class="n">stats</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">i</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="m">2000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="kd">var</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">time</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="m">0.01</span><span class="p">)</span> <span class="o">*</span> <span class="m">196</span> <span class="o">+</span> <span class="m">256</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">time</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="m">0.01234</span><span class="p">)</span> <span class="o">*</span> <span class="m">196</span> <span class="o">+</span> <span class="m">256</span><span class="p">;</span>
+
+      <span class="n">context</span><span class="p">.</span><span class="n">beginPath</span><span class="p">();</span>
+      <span class="n">context</span><span class="p">.</span><span class="n">arc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span> <span class="o">*</span> <span class="m">2</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+      <span class="n">context</span><span class="p">.</span><span class="n">fill</span><span class="p">();</span>
+
+    <span class="p">}</span>
+
+    <span class="n">stats</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+    <span class="n">window</span><span class="p">.</span><span class="n">requestAnimationFrame</span><span class="p">(</span><span class="n">draw</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">window</span><span class="p">.</span><span class="n">requestAnimationFrame</span><span class="p">(</span><span class="n">draw</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>Thanks</h3>
+
+<p><a href="http://mrdoob.github.com/stats.js/">mrdoob</a> for the stats.js code. </p>
+      </section>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-33800934-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
