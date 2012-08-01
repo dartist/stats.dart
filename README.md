@@ -28,8 +28,7 @@ void main() {
   CanvasRenderingContext2D context = canvas.getContext( '2d' );
   context.fillStyle = 'rgba(127,0,255,0.05)';
   
-  draw(t) {
-    var time = t;
+  draw(time) {
     context.clearRect( 0, 0, 512, 512 );
 
     stats.begin();
@@ -52,3 +51,6 @@ void main() {
   window.requestAnimationFrame(draw);
 }
 ```
+
+### Thanks ###
+[mrdoob](http://mrdoob.github.com/stats.js/) for the stats.js code. 
