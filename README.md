@@ -17,7 +17,21 @@ This class provides a simple info box that will help you monitor your code perfo
 
 [example](http://financeCoding.github.com/stats.dart/examples/basic/statsdart.html)
 
-### Usage ###
+### Getting Started ###
+Create a Dart project and add a **pubspec.yaml** file to it
+
+```
+dependencies:
+  stats:
+    git: https://github.com/financeCoding/stats.dart.git
+```
+and run **pub install** to install **stats** (including its dependencies). Now add import
+
+```
+#import('package:stats/stats.dart');
+```
+
+### Example ###
 
 ```dart
 #import('dart:html');
