@@ -1,6 +1,6 @@
 #library('fpsstats');
 #import('dart:html');
-
+#import('dart:math');
 class Stats {
 
   Date startTime; //= Date.now(), prevTime = startTime;
@@ -109,23 +109,23 @@ class Stats {
     
     ms = time.difference(startTime);
     
-    msMin = Math.min( msMin, ms.inMilliseconds );
-    msMax = Math.max( msMax, ms.inMilliseconds );
+    msMin = min( msMin, ms.inMilliseconds );
+    msMax = max( msMax, ms.inMilliseconds );
     
     
     msText.innerHTML = "$ms MS ($msMin - $msMax)";
-    updateGraph( msGraph, Math.min( 30, 30 - ( ms.inMilliseconds / 200 ) * 30 ) );
+    updateGraph( msGraph, min( 30, 30 - ( ms.inMilliseconds / 200 ) * 30 ) );
     
     frames++;
     if ( time.millisecondsSinceEpoch > prevTime.millisecondsSinceEpoch + 1000 ) {
 
       fps =  (( frames * 1000 ) / ( time.difference(prevTime).inMilliseconds ) ).round();
-      fpsMin = Math.min( fpsMin, fps );
-      fpsMax = Math.max( fpsMax, fps );
+      fpsMin = min( fpsMin, fps );
+      fpsMax = max( fpsMax, fps );
 
       fpsText.innerHTML = "$fps FPS ($fpsMin - $fpsMax)";
       
-      updateGraph( fpsGraph, Math.min( 30, 30 - ( fps / 100 ) * 30 ) );
+      updateGraph( fpsGraph, min( 30, 30 - ( fps / 100 ) * 30 ) );
 
       prevTime = time;
       frames = 0;
