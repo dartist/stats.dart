@@ -35,7 +35,7 @@ and run **pub install** to install **stats** (including its dependencies). Now a
 
 ```dart
 #import('dart:html');
-#import('../../src/stats.dart');
+#import('package:stats/stats.dart');
 void main() {
   Stats stats = new Stats();
   document.body.elements.add(stats.container);
