@@ -10,8 +10,8 @@ This class provides a simple info box that will help you monitor your code perfo
 
 ### Screenshots ###
 
-![stats_js_fps.png](http://financeCoding.github.com/stats.dart/assets/stats_dart_fps.png)
-![stats_js_ms.png](http://financeCoding.github.com/stats.dart/assets/stats_dart_ms.png)
+![stats_js_fps.png](http://financeCoding.github.com/stats.dart/asset/stats_dart_fps.png)
+![stats_js_ms.png](http://financeCoding.github.com/stats.dart/asset/stats_dart_ms.png)
 
 ### Live Example ###
 
