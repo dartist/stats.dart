@@ -3,42 +3,52 @@ stats.dart
 
 #### Dart Performance Monitor ####
 
-This class provides a simple info box that will help you monitor your code performance.
+This class provides stats box that will help you monitor your code performance.
 
 * **FPS** Frames rendered in the last second. The higher the number the better.
 * **MS** Milliseconds needed to render a frame. The lower the number the better.
 
 ### Screenshots ###
 
-![stats_js_fps.png](http://financeCoding.github.com/stats.dart/asset/stats_dart_fps.png)
-![stats_js_ms.png](http://financeCoding.github.com/stats.dart/asset/stats_dart_ms.png)
+![stats_js_fps.png](asset/stats_dart_fps.png)
+![stats_js_ms.png](asset/stats_dart_ms.png)
 
 ### Live Example ###
 
-[example](http://financeCoding.github.com/stats.dart/examples/basic/statsdart.html)
+[example](examples/basic/statsdart.html)
 
 ### Getting Started ###
-Create a Dart project and add a **pubspec.yaml** file to it
+Create a dart project and add a **pubspec.yaml** file to it.
+
+Using [pub.dartlang.org](http://pub.dartlang.org/packages/stats)
+
+```
+dependencies:
+  stats: 0.0.1
+```
+
+Using bleeding edge code from github. 
 
 ```
 dependencies:
   stats:
     git: https://github.com/financeCoding/stats.dart.git
 ```
-and run **pub install** to install **stats** (including its dependencies). Now add import
+
+run `pub install` to install **stats** (including its dependencies). Use the following import statement.
 
 ```
-#import('package:stats/stats.dart');
+import 'package:stats/stats.dart';
 ```
 
 ### Example ###
 
 ```dart
-#import('dart:html');
-#import('package:stats/stats.dart');
+import 'dart:html';
+import 'package:stats/stats.dart';
 void main() {
   Stats stats = new Stats();
-  document.body.elements.add(stats.container);
+  document.body.children.add(stats.container);
   CanvasElement canvas = new CanvasElement();
   canvas.width = 512;
   canvas.height = 512;
