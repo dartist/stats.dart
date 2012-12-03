@@ -41,16 +41,30 @@
 <strong>MS</strong> Milliseconds needed to render a frame. The lower the number the better.</li>
 </ul><h3>Screenshots</h3>
 
-<p><img src="http://financeCoding.github.com/stats.dart/assets/stats_dart_fps.png" alt="stats_js_fps.png"><img src="http://financeCoding.github.com/stats.dart/assets/stats_dart_ms.png" alt="stats_js_ms.png"></p>
+<p><img src="http://financeCoding.github.com/stats.dart/asset/stats_dart_fps.png" alt="stats_js_fps.png"><img src="http://financeCoding.github.com/stats.dart/asset/stats_dart_ms.png" alt="stats_js_ms.png"></p>
 
 <h3>Live Example</h3>
 
 <p><a href="http://financeCoding.github.com/stats.dart/examples/basic/statsdart.html">example</a></p>
 
-<h3>Usage</h3>
+<h3>Getting Started</h3>
+
+<p>Create a Dart project and add a <strong>pubspec.yaml</strong> file to it</p>
+
+<pre><code>dependencies:
+  stats:
+    git: https://github.com/financeCoding/stats.dart.git
+</code></pre>
+
+<p>and run <strong>pub install</strong> to install <strong>stats</strong> (including its dependencies). Now add import</p>
+
+<pre><code>#import('package:stats/stats.dart');
+</code></pre>
+
+<h3>Example</h3>
 
 <div class="highlight"><pre>#<span class="k">import</span><span class="p">(</span><span class="s1">'dart:html'</span><span class="p">);</span>
-#<span class="k">import</span><span class="p">(</span><span class="s1">'../../src/stats.dart'</span><span class="p">);</span>
+#<span class="k">import</span><span class="p">(</span><span class="s1">'package:stats/stats.dart'</span><span class="p">);</span>
 <span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">Stats</span> <span class="n">stats</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stats</span><span class="p">();</span>
   <span class="n">document</span><span class="p">.</span><span class="n">body</span><span class="p">.</span><span class="n">elements</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">stats</span><span class="p">.</span><span class="n">container</span><span class="p">);</span>
