@@ -24,7 +24,7 @@ Using [pub.dartlang.org](http://pub.dartlang.org/packages/stats)
 
 ```
 dependencies:
-  stats: 0.0.1
+  stats: 0.0.2
 ```
 
 Using bleeding edge code from github. 
