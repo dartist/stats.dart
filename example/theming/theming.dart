@@ -1,17 +1,17 @@
-#import('dart:html');
-#import('dart:math');
-#import('package:stats/stats.dart');
+import 'dart:html';
+import 'dart:math';
+import 'package:stats/stats.dart';
 
 void main() {
   Stats stats = new Stats();
-  document.body.elements.add(stats.container);
+  document.body.children.add(stats.container);
   CanvasElement canvas = new CanvasElement();
   canvas.width = 512;
   canvas.height = 512;
-  document.body.elements.add(canvas);
+  document.body.children.add(canvas);
   CanvasRenderingContext2D context = canvas.getContext('2d');
   context.fillStyle = 'rgba(127,0,255,0.05)';
-  
+
   draw(t) {
     var time = t;
     context.clearRect(0, 0, 512, 512);
@@ -32,6 +32,6 @@ void main() {
     stats.end();
     window.requestAnimationFrame(draw);
   }
-  
+
   window.requestAnimationFrame(draw);
 }
