@@ -3,36 +3,54 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
 
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
     <title>Stats.dart by financeCoding</title>
   </head>
 
   <body>
+    <a id="forkme_banner" href="https://github.com/financeCoding/stats.dart">View on GitHub</a>
+    <div class="shell">
 
-    <header>
-      <div class="container">
-        <h1>Stats.dart</h1>
-        <h2>Simple stat counter in dart</h2>
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Stats.dart</h1>
+            <h2>Simple stat counter in dart</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
 
-        <section id="downloads">
-          <a href="https://github.com/financeCoding/stats.dart/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/financeCoding/stats.dart/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/financeCoding/stats.dart" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/financeCoding/stats.dart/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/financeCoding/stats.dart/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
 
-    <div class="container">
+
+      <span class="banner-fix"></span>
+
+
       <section id="main_content">
         <h1>stats.dart</h1>
 
 <h4>Dart Performance Monitor</h4>
 
-<p>This class provides a simple info box that will help you monitor your code performance.</p>
+<p>This class provides stats box that will help you monitor your code performance.</p>
 
 <ul>
 <li>
@@ -41,33 +59,41 @@
 <strong>MS</strong> Milliseconds needed to render a frame. The lower the number the better.</li>
 </ul><h3>Screenshots</h3>
 
-<p><img src="http://financeCoding.github.com/stats.dart/asset/stats_dart_fps.png" alt="stats_js_fps.png"><img src="http://financeCoding.github.com/stats.dart/asset/stats_dart_ms.png" alt="stats_js_ms.png"></p>
+<p><img src="asset/stats_dart_fps.png" alt="stats_js_fps.png"><img src="asset/stats_dart_ms.png" alt="stats_js_ms.png"></p>
 
 <h3>Live Example</h3>
 
-<p><a href="http://financeCoding.github.com/stats.dart/examples/basic/statsdart.html">example</a></p>
+<p><a href="examples/basic/statsdart.html">example</a></p>
 
 <h3>Getting Started</h3>
 
-<p>Create a Dart project and add a <strong>pubspec.yaml</strong> file to it</p>
+<p>Create a dart project and add a <strong>pubspec.yaml</strong> file to it.</p>
+
+<p>Using <a href="http://pub.dartlang.org/packages/stats">pub.dartlang.org</a></p>
+
+<pre><code>dependencies:
+  stats: 0.0.1
+</code></pre>
+
+<p>Using bleeding edge code from github. </p>
 
 <pre><code>dependencies:
   stats:
     git: https://github.com/financeCoding/stats.dart.git
 </code></pre>
 
-<p>and run <strong>pub install</strong> to install <strong>stats</strong> (including its dependencies). Now add import</p>
+<p>run <code>pub install</code> to install <strong>stats</strong> (including its dependencies). Use the following import statement.</p>
 
-<pre><code>#import('package:stats/stats.dart');
+<pre><code>import 'package:stats/stats.dart';
 </code></pre>
 
 <h3>Example</h3>
 
-<div class="highlight"><pre>#<span class="k">import</span><span class="p">(</span><span class="s1">'dart:html'</span><span class="p">);</span>
-#<span class="k">import</span><span class="p">(</span><span class="s1">'package:stats/stats.dart'</span><span class="p">);</span>
+<div class="highlight"><pre><span class="n">import</span> <span class="s1">'dart:html'</span><span class="p">;</span>
+<span class="n">import</span> <span class="s1">'package:stats/stats.dart'</span><span class="p">;</span>
 <span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">Stats</span> <span class="n">stats</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stats</span><span class="p">();</span>
-  <span class="n">document</span><span class="p">.</span><span class="n">body</span><span class="p">.</span><span class="n">elements</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">stats</span><span class="p">.</span><span class="n">container</span><span class="p">);</span>
+  <span class="n">document</span><span class="p">.</span><span class="n">body</span><span class="p">.</span><span class="n">children</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">stats</span><span class="p">.</span><span class="n">container</span><span class="p">);</span>
   <span class="n">CanvasElement</span> <span class="n">canvas</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CanvasElement</span><span class="p">();</span>
   <span class="n">canvas</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="m">512</span><span class="p">;</span>
   <span class="n">canvas</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="m">512</span><span class="p">;</span>
@@ -103,6 +129,19 @@
 
 <p><a href="http://mrdoob.github.com/stats.js/">mrdoob</a> for the stats.js code. </p>
       </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/financeCoding">financeCoding</a> can be found on <a href="https://github.com/financeCoding/stats.dart">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
     </div>
 
               <script type="text/javascript">
