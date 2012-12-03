@@ -15,7 +15,7 @@ This class provides stats box that will help you monitor your code performance.
 
 ### Live Example ###
 
-[example](examples/basic/statsdart.html)
+[example](example/basic/statsdart.html)
 
 ### Getting Started ###
 Create a dart project and add a **pubspec.yaml** file to it.
