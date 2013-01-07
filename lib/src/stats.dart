@@ -120,7 +120,7 @@ class Stats {
   }
 
   int end() {
-    int time = _timer.elapsedTicks;
+    int time = _timer.elapsedMicroseconds;
 
     _ms = _timer.elapsedMilliseconds;
     _msMin = min(_msMin, _ms);
