@@ -3,7 +3,6 @@ part of fpsstats;
 class Stats {
 
   Stopwatch _timer = new Stopwatch();
-  bool _running = false;
 
   int _ms = 0,
       _msMin = 1000,
@@ -113,10 +112,7 @@ class Stats {
   }
 
   void begin() {
-    if (_running == false) {
-      _running = true;
-      _timer.start();
-    }
+    _timer.start();
   }
 
   int end() {
@@ -149,5 +145,6 @@ class Stats {
 
   void update() {
     end();
+
   }
 }
