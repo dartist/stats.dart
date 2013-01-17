@@ -3,3 +3,5 @@ description: Visual Dart Performance Monitor
 version: 0.0.3
 author: Adam Singer <financeCoding@gmail.com>
 homepage: https://github.com/Dartist/stats.dart
+dependencies:
+  browser: any
