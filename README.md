@@ -24,7 +24,7 @@ Using [pub.dartlang.org](http://pub.dartlang.org/packages/stats)
 
 ```
 dependencies:
-  stats: 0.0.2
+  stats: 0.0.3
 ```
 
 Using bleeding edge code from github. 
@@ -32,7 +32,7 @@ Using bleeding edge code from github.
 ```
 dependencies:
   stats:
-    git: https://github.com/financeCoding/stats.dart.git
+    git: https://github.com/Dartist/stats.dart.git
 ```
 
 run `pub install` to install **stats** (including its dependencies). Use the following import statement.
