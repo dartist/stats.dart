@@ -1,10 +1,9 @@
-import 'package:unittest/html_enhanced_config.dart';
+import 'package:unittest/html_config.dart';
 import 'package:unittest/unittest.dart';
 import 'dart:html';
 import 'package:stats/stats.dart';
 
 main() {
-  useHtmlEnhancedConfiguration();
 
   group('stats.dart', () {
     test('constructor', () {
