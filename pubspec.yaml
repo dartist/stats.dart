@@ -4,5 +4,5 @@ version: 0.0.4
 author: Adam Singer <financeCoding@gmail.com>
 homepage: https://github.com/Dartist/stats.dart
 dependencies:
-  browser:
-  unittest:
+  browser: ">=0.3.1+1 <0.3.2"
+  unittest: ">=0.3.1+1 <0.3.2"
