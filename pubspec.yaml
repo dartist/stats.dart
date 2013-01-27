@@ -1,6 +1,6 @@
 name: stats
 description: Visual Dart Performance Monitor
-version: 0.0.3
+version: 0.0.4
 author: Adam Singer <financeCoding@gmail.com>
 homepage: https://github.com/Dartist/stats.dart
 dependencies:
