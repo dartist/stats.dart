@@ -12,12 +12,8 @@ This class provides stats box that will help you monitor your code performance.
 
 ### Screenshots ###
 
-![stats_js_fps.png](asset/stats_dart_fps.png)
-![stats_js_ms.png](asset/stats_dart_ms.png)
-
-### Live Example ###
-
-[example](example/basic/statsdart.html)
+![stats_js_fps.png](master/asset/stats_dart_fps.png)
+![stats_js_ms.png](master/asset/stats_dart_ms.png)
 
 ### Getting Started ###
 Create a dart project and add a **pubspec.yaml** file to it.
@@ -26,7 +22,7 @@ Using [pub.dartlang.org](http://pub.dartlang.org/packages/stats)
 
 ```
 dependencies:
-  stats: 0.0.3
+  stats:
 ```
 
 Using bleeding edge code from github. 
