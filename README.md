@@ -1,6 +1,8 @@
 stats.dart
 ==========
 
+[![Build Status](https://drone.io/github.com/Dartist/stats.dart/status.png)](https://github.com/Dartist/stats.dart/latest)
+
 #### Dart Performance Monitor ####
 
 This class provides stats box that will help you monitor your code performance.
