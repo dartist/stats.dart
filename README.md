@@ -1,7 +1,7 @@
 stats.dart
 ==========
 
-[![Build Status](https://drone.io/github.com/Dartist/stats.dart/status.png)](https://github.com/Dartist/stats.dart/latest)
+[![Build Status](https://drone.io/github.com/Dartist/stats.dart/status.png)](https://github.com/Dartist/stats.dart/)
 
 #### Dart Performance Monitor ####
 
