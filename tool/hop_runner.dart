@@ -5,9 +5,14 @@ import 'dart:io';
 import 'package:bot/bot.dart';
 import 'package:bot/hop.dart';
 import 'package:bot/hop_tasks.dart';
+import '../test/test_dump_render_tree.dart' as test_dump_render_tree;
 
 void main() {
+  //
+  // Assert were being called from the proper location.
+  //
   _assertKnownPath();
+
   //
   // Analyzer
   //
@@ -16,15 +21,16 @@ void main() {
   //
   // Unit test headless browser
   //
-  addTask('headless_test', createProcessTask('DumpRenderTree',
-      args: ['test/tests_browser.html'],
-      description: 'Headless DumpRenderTree task'));
+  addTask('headless_test', createUnitTestTask(test_dump_render_tree.testCore));
 
   //
   // Doc generation
   //
   addTask('docs', getCompileDocsFunc('gh-pages', 'packages/', _getLibs));
 
+  //
+  // Hop away!
+  //
   runHopCore();
 }
 
