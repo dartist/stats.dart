@@ -19,7 +19,7 @@ void main() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     stats.begin();
-    double t = new Date.now().millisecondsSinceEpoch * 0.001;
+    double t = new DateTime.now().millisecondsSinceEpoch * 0.001;
 
     for (int i = 0; i < 2000; i++) {
       double x = cos(t + i * 0.01) * 196 + 256;
