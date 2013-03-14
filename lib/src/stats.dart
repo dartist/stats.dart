@@ -34,7 +34,7 @@ class Stats {
 
     container = new DivElement()
       ..id = 'stats'
-      ..on.mouseDown.add(_onContainerMouseDown, false)
+      ..onMouseDown.listen(_onContainerMouseDown)
       ..style.cssText = 'width:80px;opacity:0.9;cursor:pointer';
 
     fpsDiv = new DivElement()
