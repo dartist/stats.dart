@@ -3,9 +3,15 @@ version: 0.0.5
 author: Adam Singer <financeCoding@gmail.com>
 description: Visual Dart Performance Monitor
 homepage: https://github.com/Dartist/stats.dart
-environment:
-  sdk: '>=0.4.1+0.r19425'
+#environment:
+#  sdk: '>=0.4.1+0.r19425'
 dependencies:
-  unittest: '>=0.4.1'
-  bot: '>=0.15.0+2'
-  browser: '>=0.4.1'
+  unittest: '>=0.4.1 <0.4.2'
+  browser: '>=0.4.1 <0.4.2'
+  bot: '>=0.15.0 <0.16.0'
+  meta: '>=0.4.1 <0.4.2'
+  html5lib: '>=0.4.1 <0.4.2'
+  args: '>=0.4.1 <0.4.2'
+  logging: '>=0.4.1 <0.4.2'
+  pathos: '>=0.4.1 <0.4.2'
+  source_maps: '>=0.4.1 <0.4.2'
