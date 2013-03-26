@@ -1,17 +1,17 @@
 name: stats
-version: 0.0.6
+version: 0.0.7
 author: Adam Singer <financeCoding@gmail.com>
 description: Visual Dart Performance Monitor
 homepage: https://github.com/Dartist/stats.dart
-#environment:
-#  sdk: '>=0.4.1+0.r19425'
+environment:
+  sdk: '>=0.4.3+1.r20444'  
 dependencies:
-  unittest: '>=0.4.1 <0.4.2'
-  browser: '>=0.4.1 <0.4.2'
-  bot: '>=0.15.0 <0.16.0'
-  meta: '>=0.4.1 <0.4.2'
-  html5lib: '>=0.4.0 <0.4.1'
-  args: '>=0.4.1 <0.4.2'
-  logging: '>=0.4.1 <0.4.2'
-  pathos: '>=0.4.1 <0.4.2'
-  source_maps: '>=0.4.0 <0.4.1'
+  unittest: '>=0.4.3+1'
+  args: '>=0.4.3+1'
+  logging: '>=0.4.3+5'
+  pathos: '>=0.4.3+1'
+  meta: '>=0.4.3+1'
+dev_dependencies:
+  html5lib: '>=0.4.1'
+  browser: '>=0.4.3+1'
+  bot: '>=0.16.0 <0.17.0'
