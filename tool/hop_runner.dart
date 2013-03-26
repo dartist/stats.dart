@@ -16,7 +16,13 @@ void main() {
   //
   // Analyzer
   //
-  addTask('analyze_lib', createDartAnalyzerTask(['lib/stats.dart']));
+  addTask('analyze', createDartAnalyzerTask(['lib/stats.dart',
+                                             'example/basic/statsdart.dart',
+                                             'example/theming/theming.dart',
+                                             'test/tests_browser.dart',
+                                             //'test_dump_render_tree.dart',
+                                             'tool/hop_runner.dart'
+                                             ]));
 
   //
   // Unit test headless browser
@@ -24,14 +30,9 @@ void main() {
   addTask('headless_test', createUnitTestTask(test_dump_render_tree.testCore));
 
   //
-  // Doc generation
-  //
-  addTask('docs', getCompileDocsFunc('gh-pages', 'packages/', _getLibs));
-
-  //
   // Hop away!
   //
-  runHopCore();
+  runHop();
 }
 
 void _assertKnownPath() {
@@ -40,11 +41,4 @@ void _assertKnownPath() {
   // So check for existance of /bin/hop_runner.dart
   final thisFile = new File('tool/hop_runner.dart');
   assert(thisFile.existsSync());
-}
-
-Future<List<String>> _getLibs() {
-  return new Directory('lib').list()
-      .where((FileSystemEntity fse) => fse is File)
-      .map((File file) => file.path)
-      .toList();
 }
