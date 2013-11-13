@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script type="application/dart" src="tests_browser.dart"></script>
+
+  <script>
+    (function () {
+      // only run if testRunner is defined -- we're in DRT
+      if (window.testRunner) {
+        // don't dump the structure.
+        // just the text of the output plus console output
+        testRunner.dumpAsText();
+
+        // don't finish when layout is done.
+        // instead, wait to be notified
+        testRunner.waitUntilDone();
+
+        // listen for messages from the test harness
+        window.addEventListener('message', function (event) {
+          console.log(event.data);
+          if (event.data === 'unittest-suite-done') {
+            console.log('OK');
+            testRunner.notifyDone();
+          }
+
+        }, false);
+
+        // listen for unhandled exceptions
+        window.addEventListener('error', function (e) {
+          testRunner.notifyDone();
+        });
+      }
+    }());
+  </script>
+</body>
+</html>
