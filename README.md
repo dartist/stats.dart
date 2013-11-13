@@ -25,7 +25,7 @@ dependencies:
   stats:
 ```
 
-Using bleeding edge code from github. 
+Using bleeding edge code from github.
 
 ```
 dependencies:
@@ -53,7 +53,7 @@ void main() {
   document.body.elements.add(canvas);
   CanvasRenderingContext2D context = canvas.getContext('2d');
   context.fillStyle = 'rgba(127,0,255,0.05)';
-  
+
   draw(time) {
     context.clearRect(0, 0, 512, 512);
 
@@ -73,10 +73,11 @@ void main() {
     stats.end();
     window.requestAnimationFrame(draw);
   }
-  
+
   window.requestAnimationFrame(draw);
 }
 ```
 
 ### Thanks ###
-[mrdoob](http://mrdoob.github.com/stats.js/) for the stats.js code. 
+[mrdoob](http://mrdoob.github.com/stats.js/) for the stats.js code.
+
