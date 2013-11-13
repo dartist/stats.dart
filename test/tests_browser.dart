@@ -2,7 +2,6 @@ import 'package:unittest/html_config.dart';
 import 'package:unittest/unittest.dart';
 import 'dart:html';
 import 'package:stats/stats.dart';
-
 // Headless testing for drone.io
 main() {
   useHtmlConfiguration();
