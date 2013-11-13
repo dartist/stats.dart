@@ -1,5 +1,5 @@
 name: stats
-version: 0.0.10
+version: 0.1.0
 author: Adam Singer <financeCoding@gmail.com>
 description: Visual Dart Performance Monitor
 homepage: https://github.com/Dartist/stats.dart
