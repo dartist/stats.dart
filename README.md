@@ -1,6 +1,8 @@
 stats.dart
 ==========
 
+[![Build Status](https://drone.io/github.com/Dartist/stats.dart/status.png)](https://drone.io/github.com/Dartist/stats.dart/latest)
+
 #### Dart Performance Monitor ####
 
 This class provides stats box that will help you monitor your code performance.
@@ -10,12 +12,8 @@ This class provides stats box that will help you monitor your code performance.
 
 ### Screenshots ###
 
-![stats_js_fps.png](asset/stats_dart_fps.png)
-![stats_js_ms.png](asset/stats_dart_ms.png)
-
-### Live Example ###
-
-[example](example/basic/statsdart.html)
+![stats_js_fps.png](https://raw.github.com/Dartist/stats.dart/master/asset/stats_dart_fps.png)
+![stats_js_ms.png](https://raw.github.com/Dartist/stats.dart/master/asset/stats_dart_ms.png)
 
 ### Getting Started ###
 Create a dart project and add a **pubspec.yaml** file to it.
@@ -24,7 +22,7 @@ Using [pub.dartlang.org](http://pub.dartlang.org/packages/stats)
 
 ```
 dependencies:
-  stats: 0.0.2
+  stats:
 ```
 
 Using bleeding edge code from github. 
@@ -32,7 +30,7 @@ Using bleeding edge code from github.
 ```
 dependencies:
   stats:
-    git: https://github.com/financeCoding/stats.dart.git
+    git: https://github.com/Dartist/stats.dart.git
 ```
 
 run `pub install` to install **stats** (including its dependencies). Use the following import statement.

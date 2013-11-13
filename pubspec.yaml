@@ -1,5 +1,15 @@
 name: stats
-description: Visual Dart Performance Monitor
-version: 0.0.2
+version: 0.0.10
 author: Adam Singer <financeCoding@gmail.com>
-homepage: http://financecoding.github.com/stats.dart/
+description: Visual Dart Performance Monitor
+homepage: https://github.com/Dartist/stats.dart
+environment:
+  sdk: ">=0.8.10+6 <2.0.0"
+dependencies:
+  unittest: "0.9.0"
+  browser: ">=0.9.0 < 0.10.0"
+  plummbur_kruk: ">=0.1.0 <0.1.1"
+dev_dependencies:
+  html5lib: '>=0.4.3'
+  hop: '>=0.21.0 <0.22.0'
+

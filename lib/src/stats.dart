@@ -34,7 +34,7 @@ class Stats {
 
     container = new DivElement()
       ..id = 'stats'
-      ..on.mouseDown.add(_onContainerMouseDown, false)
+      ..onMouseDown.listen(_onContainerMouseDown)
       ..style.cssText = 'width:80px;opacity:0.9;cursor:pointer';
 
     fpsDiv = new DivElement()
@@ -116,7 +116,7 @@ class Stats {
   }
 
   int end() {
-    int time = _timer.elapsedMicroseconds;
+    int time = _timer.elapsedMilliseconds;
 
     _ms = _timer.elapsedMilliseconds;
     _msMin = min(_msMin, _ms);
@@ -127,8 +127,6 @@ class Stats {
     _frames++;
 
     if (time > 1000) {
-
-
       _fps =  ((_frames * 1000) / _ms).round().toInt();
       _fpsMin = min(_fpsMin, _fps);
       _fpsMax = max(_fpsMax, _fps);
@@ -145,6 +143,5 @@ class Stats {
 
   void update() {
     end();
-
   }
 }
