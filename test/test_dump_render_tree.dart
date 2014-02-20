@@ -28,7 +28,7 @@ void testRun() {
 void _runDrt(String htmlFile) {
   final allPassedRegExp = new RegExp('All \\d+ tests passed');
 
-  final future = Process.run('DumpRenderTree', [htmlFile])
+  final future = Process.run('content_shell', [htmlFile])
     .then((ProcessResult pr) {
       expect(pr.exitCode, 0);
       expect(pr.stdout, matches(allPassedRegExp));

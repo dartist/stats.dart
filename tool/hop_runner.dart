@@ -1,12 +1,11 @@
 library hop_runner;
 
-import 'dart:async';
 import 'dart:io';
 import 'package:hop/hop.dart';
 import 'package:hop/hop_tasks.dart';
 import '../test/test_dump_render_tree.dart' as test_dump_render_tree;
 
-void main() {
+void main(List<String> args) {
   //
   // Assert were being called from the proper location.
   //
@@ -15,7 +14,7 @@ void main() {
   //
   // Analyzer
   //
-  addTask('analyze', createDartAnalyzerTask(['lib/stats.dart',
+  addTask('analyze', createAnalyzerTask(['lib/stats.dart',
                                              'example/basic/statsdart.dart',
                                              'example/theming/theming.dart',
                                              'test/tests_browser.dart',
@@ -31,7 +30,7 @@ void main() {
   //
   // Hop away!
   //
-  runHop();
+  runHop(args);
 }
 
 void _assertKnownPath() {
